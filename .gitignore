@@ -1,5 +1,10 @@
 # Custom
 /data/
+/artifacts/
+/mlartifacts/
+/mlruns/
+/output/
+mlflow.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
