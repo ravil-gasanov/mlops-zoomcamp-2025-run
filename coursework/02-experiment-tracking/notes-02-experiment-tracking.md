@@ -29,7 +29,7 @@ Limitations:
 Features:
 - model lineage: see the run the model is associated with and all relevant details
 - versioning: a model with the same name can have multiple versions
-- stage: staging, production, archive
+- (deprecated) stage: staging, production, archive
 - easily pull and deploy a model from the registry by specifying the model name, version, and stage
 - for each model, also contains (automatically inferred, but editable) env requirements info
 
