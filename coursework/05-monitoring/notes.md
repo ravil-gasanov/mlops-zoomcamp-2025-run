@@ -30,5 +30,5 @@ Additional:
 - column mapper
 - report(metrics...)
 - some important metrics: drift in prediction column, drift in dataset, number of missing values
-- or just use DataDriftPreset
+- or just use DataDriftPreset to use pre-defined metrics
 - report.run(reference_data = train data, current_data = incoming (or val data for dev purposes))
