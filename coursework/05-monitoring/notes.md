@@ -1,6 +1,6 @@
 # Monitoring
 
-## Types
+## Monitoring types
 Core:
 - Service health
     - uptime
@@ -19,16 +19,19 @@ Additional:
 - Outliers
 - Explainability
 
-## Approach to implementing monitoring
+## Strategies to implement monitoring
 - make use of what the company already has in place and build on top of that
 - maybe build a simple dashboard using e.g. a BI tool, before trying to fully automate monitoring
 
 - monitor in batch, even if you have an online prediction service
 - i.e. log inputs, outputs, and then run monitoring batch jobs
 
-## Evidently
-- column mapper
-- report(metrics...)
-- some important metrics: drift in prediction column, drift in dataset, number of missing values
-- or just use DataDriftPreset to use pre-defined metrics
-- report.run(reference_data = train data, current_data = incoming (or val data for dev purposes))
+## Implement a monitoring job
+1. Build an evidently report (map columns, define metrics)
+2. Build a test suite
+3. Build a flow (e.g. with Prefect) that:
+    a. Loads new data and predictions to your database
+    b. Calculates and logs defined metrics
+    c. Run the test suite
+4. Build a dashboard (e.g. with Grafana)
+5. Set up alerts (not covered in the module)
